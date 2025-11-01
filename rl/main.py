@@ -5,13 +5,9 @@ from stable_baselines3.common.env_util import make_vec_env
 import time
 import torch
 
-# GPU Check
-device = "cuda" if torch.cuda.is_available() else "cpu"
-print(f"Using device: {device}")
-
 
 # Model Setup
-train_env = make_vec_env("CarRacing-v3", n_envs=32)
+train_env = make_vec_env("CarRacing-v3", n_envs=16)
 
 
 policy_kwargs = dict(
